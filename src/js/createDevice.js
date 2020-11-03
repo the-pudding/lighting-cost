@@ -1,7 +1,6 @@
 import * as nouislider from 'nouislider';
 
 
-
 let $slider;
 
 // function createDisplay() {
@@ -19,13 +18,13 @@ function createSlider() {
       'max': 100
     },
 
-    step: 50,
+    step: 20,
 
     // Handles start at ...
-    start: [0],
+    start: [100],
 
     // ... must be at least 300 apart
-    margin: 50,
+    margin: 20,
 
     // Display colored bars between handles
     connect: true,
@@ -35,8 +34,8 @@ function createSlider() {
     orientation: 'vertical',
 
     // Move handle on tap, bars are draggable
-    behaviour: 'tap-drag',
-    tooltips: true,
+    behaviour: 'drag',
+    tooltips: false,
 
     // Show a scale with the slider
     pips: {
@@ -46,8 +45,12 @@ function createSlider() {
     }
   });
 
-  $slider.style.height = '100%';
+  $slider.style.height = d3.select('#slider').height
   $slider.style.margin = '0 auto 10px';
+
+  $slider.noUiSlider.on('slide', () => {
+    console.log('nice')
+  })
 
 }
 
