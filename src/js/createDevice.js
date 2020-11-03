@@ -51,7 +51,7 @@ function createSlider() {
   });
 
   $slider.style.height = d3.select('#slider').height
-  $slider.style.margin = '0 auto 10px';
+  //   $slider.style.margin = '0 auto 10px';
 
   $slider.noUiSlider.on('change', () => {
     soundButton1.play();
