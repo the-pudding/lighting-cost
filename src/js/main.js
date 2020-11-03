@@ -5,6 +5,10 @@ import linkFix from "./utils/link-fix";
 import graphic from "./graphic";
 import footer from "./footer";
 
+
+import createDevice from "./createDevice"
+''
+
 const $body = d3.select("body");
 let previousWidth = 0;
 
@@ -31,7 +35,11 @@ function setupStickyHeader() {
   }
 }
 
+
+
 function init() {
+
+  createDevice.createContainers()
   // adds rel="noopener" to all target="_blank" links
   linkFix();
   // add mobile class to body tag
