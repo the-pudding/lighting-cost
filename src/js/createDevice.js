@@ -5,8 +5,10 @@ let $slider;
 
 let boolSwitchOn;
 
+let soundBigButton2;
 let soundButton1;
 let soundSwitch1;
+let soundDial1;
 
 // function createDisplay() {
 
@@ -95,16 +97,109 @@ function createSwitch() {
 
 function setupSounds() {
   soundButton1 = new Audio('assets/sounds/button1.wav');
+  soundBigButton2 = new Audio('assets/sounds/button2.wav');
   soundSwitch1 = new Audio('assets/sounds/switch1.wav');
+  soundDial1 = new Audio('assets/sounds/dial1.wav');
 }
+
+
+function createBigButtons() {
+  const bigButtonHeight = d3.select('.big-button-container').style('height')
+
+  d3.selectAll('.big-button-container')
+    .style('width', bigButtonHeight)
+
+  d3.selectAll('.button-inner')
+    .on('click', function () {
+
+      function pushButtonDown(btn) {
+        d3.select(btn).classed('button-up-shadow', false)
+        console.log(btn)
+      }
+
+      function pushButtonUp(btn) {
+        d3.select(btn).classed('button-up-shadow', true)
+        console.log(btn)
+      }
+
+      const buttonIsUp = d3.select(this).classed('button-up-shadow') //todo add to "annoying things I wish they'd taught about js" blog post
+
+      buttonIsUp ? pushButtonDown(this) : pushButtonUp(this);
+
+      soundBigButton2.play()
+
+      // buttonIsUp = d3.select(this).classed('button-up-shadow')
+      //   console.log(buttonIsUp)
+
+    })
+}
+
+function handleDialValue(dialValueClicked) {
+  if (dialValueClicked == 'OFF') {
+    d3.select('.dial')
+      .transition()
+      .style('transform', 'rotate(-135deg)')
+  }
+  if (dialValueClicked == '10') {
+    d3.select('.dial')
+      .transition()
+      .style('transform', 'rotate(-95deg)')
+  }
+  if (dialValueClicked == '20') {
+    d3.select('.dial')
+      .transition()
+      .style('transform', 'rotate(-50deg)')
+  }
+  if (dialValueClicked == '30') {
+    d3.select('.dial')
+      .transition()
+      .style('transform', 'rotate(-5deg)')
+  }
+  if (dialValueClicked == '40') {
+    d3.select('.dial')
+      .transition()
+      .style('transform', 'rotate(40deg)')
+  }
+  if (dialValueClicked == '50') {
+    d3.select('.dial')
+      .transition()
+      .style('transform', 'rotate(85deg)')
+  }
+  if (dialValueClicked == '60') {
+    d3.select('.dial')
+      .transition()
+      .style('transform', 'rotate(145deg)')
+  }
+  soundDial1.play()
+
+}
+
+
+function createDial() {
+  const dialHeight = d3.select('.dial-container').style('height')
+
+  d3.selectAll('.dial-container')
+    .style('width', dialHeight)
+
+  const dialButton = parseFloat(d3.select('.dial').style('height').replace('px', '')) * 0.7
+  const newHeight = (dialButton).toString() + 'px'
+
+  d3.selectAll('.dial-section-label').style('height', newHeight)
+
+
+  d3.selectAll('.dial-section-label').on('click', function () {
+    const dialValueClicked = d3.select(this).text()
+    handleDialValue(dialValueClicked)
+  })
+
+}
+
 
 // function createToggle() {
 
 // }
 
-// function createDial() {
 
-// }
 
 // functino createBigButtons() {
 
@@ -123,6 +218,8 @@ function createContainers() {
   console.log('nice')
   createSwitch()
   createSlider()
+  createBigButtons()
+  createDial()
 
 }
 

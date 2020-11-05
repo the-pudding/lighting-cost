@@ -76,7 +76,7 @@
                     text-transform: uppercase
                     text-align: center
                     margin 0
-                    font-size: 16px
+                    font-size: 12px
 
                 .toggle-middle
                     background-color red
@@ -124,43 +124,104 @@
                     .toggle-switch-label
                         text-transform: uppercase
                         font-family: 'Share Tech Mono' 
-                        font-size 14px
+                        font-size 12px
                         
 
-            .dial 
+            .dial-container
                 height 48%
                 width 100%
                 background-color: #B4B89F
+                padding 1rem
+
+                .dial-labels
+                    transform rotate(-130deg) translate(-52px, -42px)
+                    position: absolute
+                    
+                    .dial-section-label
+                        font-family: 'Share Tech Mono'
+                        position absolute
+                        transform-origin: bottom center
+                        font-size: 12px
+                        cursor pointer
+
+                    .char1
+                        transform rotate(-10deg)
+                    .char2
+                        transform rotate(35deg)
+                    .char3
+                        transform rotate(80deg)   
+                    .char4
+                        transform rotate(125deg)
+                    .char5
+                        transform rotate(170deg)
+                    .char6
+                        transform rotate(215deg)
+                    .char7
+                        transform rotate(270deg)                                                                                                                     
+
+                .dial
+                    border-radius 50%
+                    background-color: #281C16
+                    height 100%
+                    width 100%
+                    transform rotate(-135deg)
+
+                    .dial-line
+                        height 25%
+                        width 1%
+                        background-color: white
+                        margin 0 auto
+
 
         .panel-right
             background-color: #B4B89F
-            padding 1rem
+            padding 0.5rem
 
             .big-button-container
                 height 40%
-                width 100%
+                margin 0 auto
+                // width 100%
 
                 .button-outer
                     border-radius 50%
                     height 100%
                     width 100%
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(180, 184, 159, 0) 100%), #B4B89F;
 
                     .button-inner.red
-                        background-color: red
-                        height 100%
-                        width 100%
+                        // background-color: red
+                        background: radial-gradient(283.75% 283.75% at 50% 50%, rgba(0, 0, 0, 0.1) 0%, #D00000 100%), #D00000;
+                        border: 1px solid #3C2A22;
+                        box-sizing: border-box;                        
+                        height 80%
+                        width 80%
                         border-radius 50%
+                        transform translate(12.5%,12.5%)
+
+                    .button-inner.white
+                        background: radial-gradient(283.75% 283.75% at 50% 50%, rgba(0, 0, 0, 0.1) 0%, #FCF1E4 100%), #FCF1E4;
+                        border: 1px solid #3C2A22;
+                        box-sizing: border-box;                        
+                        height 80%
+                        width 80%
+                        border-radius 50%
+                        transform translate(12.5%,12.5%)
+
+                    .button-up-shadow    
+                        box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.2), inset 0px -10px 10px rgba(255, 255, 255, 0.5), inset 0px 10px 10px rgba(0, 0, 0, 0.2);
 
             .big-button-label
                 background-color: #281C16
+                margin-bottom 0.5rem
 
                 .big-button-label-text
                     color: #E8E3E3
                     text-align: center
                     text-transform: uppercase
                     font-family: 'Share Tech Mono' 
-                    font-size 14px
+                    font-size 12px
                     margin 0
+                    padding 0 0.05rem
 
 .device-bottom
     // margin 2vh 0
