@@ -1,6 +1,10 @@
 <div class='device-container'>
     <div class='device-top'>
-        <div class='device-display-container'></div>
+        <div class='device-display-container'>
+            <div class='needle-screen'></div>
+            <div class='needle'></div>
+            <div class='needle-labels'></div>
+        </div>
     </div>
 
     <div class='device-middle'>
@@ -80,9 +84,77 @@
     </div>
 
     <div class='device-bottom'>
-        <div class='flashing-light-container panel-component'></div>
-        <div class='dropdown-container panel-component'></div>
+        <div class='flashing-light-container panel-component'>
+            <div class='light-row'>
+                <div class='light-box-container'>
+                    <div class='light-box'>
+                        <p class='light-box-title'>cool</p>
+                        <div class='light-box-light' data-attribute='light-cool'></div>
+                    </div>
+                    <div class='light-box'>
+                        <p class='light-box-title'>boost</p>
+                        <div class='light-box-light' data-attribute='light-boost'></div>
+                    </div>
+                    <div class='light-box'>
+                        <p class='light-box-title'>test</p>
+                        <div class='light-box-light' data-attribute='light-test'></div>
+                    </div>
+                </div>
+                <div class='light-charge-box-container'>
+                    <div class='light-charge-box'>
+                        <div class='light-box'>
+                            <p class='light-box-title'>+</p>
+                            <div class='light-box-light yellow' data-attribute='light-charge-plus'></div>
+                        </div>
+                        <div class='light-box'>
+                            <p class='light-box-title'>-</p>
+                            <div class='light-box-light green' data-attribute='light-charge-minus'></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class='light-box-container'>
+                    <div class='light-box'>
+                        <p class='light-box-title'>state</p>
+                        <div class='light-box-light' data-attribute='light-state'></div>
+                    </div>
+                    <div class='light-box'>
+                        <p class='light-box-title'>lamp</p>
+                        <div class='light-box-light' data-attribute='light-lamp'></div>
+                    </div>
+                    <div class='light-box'>
+                        <p class='light-box-title'>power</p>
+                        <div class='light-box-light' data-attribute='light-power'></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class='label-row'>
+                <p class='flashing-light-title'>reserve power</p>
+            </div>
+
+
+        </div>
+
+        <div class='dropdown-container panel-component'>
+            <div class='dropdown-button'>
+                <p class='dropdown-title'>source</p>
+                <div class='dropdown-arrow'></div>
+            </div>
+            <div class='dropdown-button'>
+                <p class='dropdown-title'>lumens</p>
+                <div class='dropdown-arrow'></div>
+            </div>
+            <div class='dropdown-button'>
+                <p class='dropdown-title'>year</p>
+                <div class='dropdown-arrow'></div>
+            </div>
+        </div>
     </div>
+
+</div>
 
 
 </div>

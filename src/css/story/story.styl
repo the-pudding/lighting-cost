@@ -28,6 +28,17 @@
     width 100%
     height 100%
 
+    .device-display-container
+        height 100%
+        width 100%
+        .needle-screen
+            background: radial-gradient(83.43% 61.24% at 50% 50%, #FFE1AB 0%, #FBC570 100%), #FFDA9B;
+            box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.1), inset 5px 5px 10px rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            height 100%
+            width 100%
+
+
 .device-middle
     margin 1.5vh 0
     width 100%
@@ -47,8 +58,11 @@
             .noUi-pips-vertical
                 left 50%
                 transform translate(-50%,0)
+                cursor pointer
             .noUi-base
                 transform translate(-50%,0)
+            .noUi-touch-area
+                cursor pointer
 
         .panel
             height 100%
@@ -83,6 +97,7 @@
                     height 35%
                     overflow hidden
                     position: relative
+                    cursor pointer
 
 
                     .toggle-switch-background
@@ -134,8 +149,10 @@
                 padding 1rem
 
                 .dial-labels
-                    transform rotate(-130deg) translate(-52px, -42px)
+                    transform rotate(-130deg) translate(-64px, -52px)                    
                     position: absolute
+                    @media(max-width: 400px)
+                        transform rotate(-130deg) translate(-52px, -42px)
                     
                     .dial-section-label
                         font-family: 'Share Tech Mono'
@@ -164,7 +181,7 @@
                     background-color: #281C16
                     height 100%
                     width 100%
-                    transform rotate(-135deg)
+                    transform rotate(-135deg) 
 
                     .dial-line
                         height 25%
@@ -187,6 +204,9 @@
                     height 100%
                     width 100%
                     background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(180, 184, 159, 0) 100%), #B4B89F;
+
+                    .button-inner
+                        cursor pointer
 
                     .button-inner.red
                         // background-color: red
@@ -234,7 +254,86 @@
         background-color #B4B89F
         height 50%
         margin-bottom 1vh
-    
-    .dropdown-container
-        background-color: #B4B89F
-        height 45%
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1), -5px -5px 20px rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        padding 1rem
+
+        .light-row
+            display flex
+            flex-direction row
+            justify-content: space-around
+            height 50%
+            width 100% 
+
+            .light-box-container
+                height 100%
+                display flex
+                flex-direction: row
+                padding-bottom: 0.5rem;
+
+                .light-box
+                    margin-right 0.5rem
+
+            .light-box-title
+                font-family: 'Share Tech Mono' 
+                font-size 12px
+                text-transform: uppercase
+                margin 0
+                text-align: center
+
+            .light-box-light
+                border-radius: 50%
+                background: radial-gradient(50% 50% at 50% 50%, #D00000 40.1%, #E8E3E3 100%), #D00000;
+                border: 2px solid #3C2A22;
+                box-sizing: border-box;
+                width 1.5rem
+                height 1.5rem
+                cursor pointer
+                margin 0 auto
+            
+            .light-box-light.yellow
+                background: radial-gradient(50% 50% at 50% 50%, #F2C94C 40.1%, #E8E3E3 100%), #F2C94C;
+        
+            .light-box-light.green
+                background: radial-gradient(50% 50% at 50% 50%, #97A93C 40.1%, #E8E3E3 100%), #97A93C;
+
+
+            .light-charge-box-container
+                width 20%
+
+                .light-charge-box
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-around
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%), #B4B89F;
+                    padding-bottom: 0.5rem;
+
+        .label-row
+            .flashing-light-title
+                text-align: center
+                font-family: 'Share Tech Mono' 
+                font-size 14px
+                text-transform: uppercase
+
+.dropdown-container
+    background-color: #B4B89F
+    height 35%
+    padding 1rem
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+
+    .dropdown-button
+        padding-right 1rem
+        background: #281C16;
+        width 25%
+        height 50%
+        cursor pointer
+
+        .dropdown-title
+            font-family: 'Share Tech Mono' 
+            font-size 14px
+            text-transform: uppercase
+            margin 0
+            color: #E8E3E3;
+            text-align: center

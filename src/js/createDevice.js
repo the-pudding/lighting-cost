@@ -10,6 +10,23 @@ let soundButton1;
 let soundSwitch1;
 let soundDial1;
 
+let lightCool = false
+let lightBoost = false
+let lightTest = false
+let lightState = false
+let lightLamp = false
+let lightPower = false
+
+let lightChargePlus = false
+let lightChargeMinus = false
+
+let dialValue = 'off';
+
+let sliderValue = 0;
+
+let buttonRedValue = false
+let buttonWhiteValue = false
+
 // function createDisplay() {
 
 // }
@@ -91,6 +108,7 @@ function createSwitch() {
     }
 
     boolSwitchOn ? turnSwitchOff() : turnSwitchOn()
+    updateNeedle()
     soundSwitch1.play()
   })
 }
@@ -130,6 +148,7 @@ function createBigButtons() {
 
       // buttonIsUp = d3.select(this).classed('button-up-shadow')
       //   console.log(buttonIsUp)
+      updateNeedle()
 
     })
 }
@@ -172,6 +191,8 @@ function handleDialValue(dialValueClicked) {
   }
   soundDial1.play()
 
+  updateNeedle()
+
 }
 
 
@@ -192,6 +213,24 @@ function createDial() {
     handleDialValue(dialValueClicked)
   })
 
+  updateNeedle()
+
+}
+
+
+function updateNeedle() {
+  console.log(lightCool)
+  console.log(lightBoost)
+  console.log(lightTest)
+  console.log(lightState)
+  console.log(lightLamp)
+  console.log(lightPower)
+  console.log(dialValue)
+  console.log(sliderValue)
+  console.log(buttonRedValue)
+  console.log(buttonWhiteValue)
+  console.log(lightChargePlus)
+  console.log(lightChargeMinus)
 }
 
 
@@ -205,9 +244,52 @@ function createDial() {
 
 // }
 
-// function createFlashingButtons() {
+function createFlashingLights() {
+  function updateLight(light) {
+    if (light === 'light-cool') {
+      lightCool = lightCool ? false : true
+    }
+    if (light === 'light-boost') {
+      lightBoost = lightBoost ? false : true
+    }
+    if (light === 'light-test') {
+      lightTest = lightTest ? false : true
+    }
+    if (light === 'light-state') {
+      lightState = lightState ? false : true
+    }
+    if (light === 'light-lamp') {
+      lightLamp = lightLamp ? false : true
+    }
+    if (light === 'light-power') {
+      lightPower = lightPower ? false : true
+    }
+    if (light === 'light-charge-minus') {
+      lightChargeMinus = lightChargeMinus ? false : true
+    }
+    if (light === 'light-charge-plus') {
+      lightChargePlus = lightChargePlus ? false : true
+    }
+  }
 
-// }
+
+
+
+
+
+
+
+
+  d3.selectAll('.light-box-light').on('click', function () {
+
+    const $thisLight = d3.select(this)
+    const pushedLight = $thisLight.attr('data-attribute')
+    updateLight(pushedLight)
+
+    soundButton1.play();
+    updateNeedle()
+  })
+}
 
 // function createDropDowns() {
 
@@ -215,11 +297,11 @@ function createDial() {
 
 function createContainers() {
   setupSounds()
-  console.log('nice')
   createSwitch()
   createSlider()
   createBigButtons()
   createDial()
+  createFlashingLights()
 
 }
 
