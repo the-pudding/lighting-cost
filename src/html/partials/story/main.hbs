@@ -1,16 +1,66 @@
 <div class='device-container'>
+    <div class='completion-cards'></div>
+
+    <div class='power-switch instruction-card active'>
+        <p class='instruction'>switch the power on to start working!</p>
+    </div>
+
+    <div class='era1'>
+        <p class='instruction'>Easy there, tiger! Looks like you've put in the allotted 0.35 seconds to be able to
+            afford an hour of light; better take your lunch break!</p>
+    </div>
+
+
     <div class='device-top'>
         <div class='device-display-container'>
-            <div class='needle-screen'></div>
-            <div class='needle'></div>
-            <div class='needle-labels'></div>
+            <div class='lumens-section'>
+                <div class='lumens-label'>
+                    <p>lumens</p>
+                </div>
+                <div class='lumens-dials'>
+                    <svg class='lumens-dial-2020ad'></svg>
+                    <svg class='lumens-dial-1800ad'></svg>
+                    <svg class='lumens-dial-4000bc'></svg>
+                </div>
+            </div>
+            <div class='time-section'>
+                <div class='time-label'>
+                    <p>time</p>
+                </div>
+                <div class='time-bars'>
+                    <div class='time-bar-2020ad time-bar'>
+                        <div class='time-bar-background'>
+                            <div class='time-bar-foreground time-bar-2020ad'>
+                                <p class='time-display time-bar-2020ad'></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='time-bar-1800ad time-bar'>
+                        <div class='time-bar-background'>
+                            <div class='time-bar-foreground time-bar-1800ad'>
+                                <p class='time-display time-bar-2020ad'></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='time-bar-4000bc time-bar'>
+                        <div class='time-bar-background'>
+                            <div class='time-bar-foreground time-bar-4000bc'>
+                                <p class='time-display time-bar-2020ad'></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 
     <div class='device-middle'>
         <div class='control-panel-container'>
-            <div id='slider' class='panel-left panel panel-component'>
-
+            <div class='slider-pad'>
+                <div id='slider' class='panel-left panel panel-component'>
+                </div>
             </div>
             <div class='panel-middle panel panel-component'>
                 <div class='toggle panel-component'>
@@ -50,6 +100,11 @@
                     </div>
                 </div>
                 <div class='dial-container panel-component'>
+                    {{!-- <svg class='svg-dial' width='100%' height='100%'>
+                        <img src='assets/images/dial.svg'>
+                    </svg> --}}
+                </div>
+                {{!-- <div class='dial-container panel-component'>
                     <div class='dial-labels'>
                         <div class='dial-section-label char1'>OFF</div>
                         <div class='dial-section-label char2'>10</div>
@@ -62,7 +117,7 @@
                     <div class='dial'>
                         <div class='dial-line'></div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class='panel-right panel panel-component'>
                 <div class='big-button-label'>

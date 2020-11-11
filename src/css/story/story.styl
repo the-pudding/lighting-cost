@@ -1,9 +1,54 @@
 /* CUSTOM STORY STYLE */
+
+.completion-card
+    display none
+
+.instruction-card
+    display: none
+    font-family: 'Share Tech Mono' 
+    text-transform: uppercase
+    text-align: center
+
+.instruction-card.active
+    display block
+    background: #E8E3E3;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    height 10rem
+    position absolute
+    width 90%
+    bottom 1%
+    left 5%
+
+.era1
+    display none
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 45.31%, #FFF5E3 100%), #FFFFFF;
+    opacity: 0.95;
+    font-family: 'Share Tech Mono' 
+    text-transform: uppercase
+    text-align: center
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    height 10rem
+    position absolute
+    width 90%
+    bottom 1%
+    left 5%
+    p
+        font-size 16px
+        
+
+.era1.active
+    display block    
+
 .device-container
     background-color #B4B89F
     width 35vw
     height 80vh
     margin 0 auto
+    position relative
     display flex
     flex-direction column
     padding 1vw
@@ -26,23 +71,119 @@
     box-shadow 5px 5px 10px rgba(0, 0, 0, 0.2)
     border-radius 20px
     width 100%
-    height 100%
+    height 33%
 
     .device-display-container
         height 100%
         width 100%
-        .needle-screen
-            background: radial-gradient(83.43% 61.24% at 50% 50%, #FFE1AB 0%, #FBC570 100%), #FFDA9B;
-            box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.1), inset 5px 5px 10px rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            height 100%
-            width 100%
+        background: linear-gradient(180deg, rgba(60, 42, 34, 0.75) 0%, rgba(0, 0, 0, 0.075) 100%), #3C2A22;
+        border: 1px solid #281C16;
+        box-sizing: border-box;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        display: flex
+        flex-direction: column
+
+        .lumens-section
+            height 60%
+
+            .lumens-label
+                font-family: 'Share Tech Mono' 
+                text-transform: uppercase
+                text-align: center
+                margin 0
+                font-size: 12px
+                color: #8C7D7D
+                p
+                    margin 0
+            .lumens-dials
+                width 100%
+                display flex
+                flex-direction: row
+                justify-content: space-evenly
+                height 100%
+
+                .lumens-dial-2020ad
+                .lumens-dial-1800ad
+                .lumens-dial-4000bc
+                    width 30%
+                    height 70% //todo 
+                    // background-color: pink
+
+                    .gaugeChart-bezel-outer 
+                        fill: none
+                        stroke: black
+  
+                    .gaugeChart-bezel-inner 
+                        fill: none
+                        stroke: #CCCCCC
+  
+                    .gaugeChart-tick 
+                        fill: none
+                        stroke: black
+  
+                    .gaugeChart-face
+                    .gaugeChart-tickHider 
+                        stroke-width: 0;
+                        fill: white;
+  
+                    .gaugeChart-needle 
+                        stroke: #CD4120
+                        fill: #E57358
+                        opacity: 0.8
+  
+                    .gaugeChart-needle-cap 
+                        stroke: #666666
+                        fill: #4684EE
+  
+
+
+        .time-section
+            height 40%
+            .time-label
+                font-family: 'Share Tech Mono' 
+                text-transform: uppercase
+                text-align: center
+                margin 0
+                font-size: 12px
+                color: #8C7D7D
+                p
+                    margin 0 
+            .time-bars
+                display: flex
+                flex-direction: row
+                height 30%
+                justify-content: space-around
+                .time-bar
+                    height 100%
+                    width 25%
+                    .time-bar-background
+                        width 100%
+                        height 100%
+                        background: radial-gradient(83.43% 61.24% at 50% 50%, #FFDDAB 0%, #FBC570 100%), #FFDA9B;
+
+                        .time-bar-foreground
+                            background-color: #D00000
+                            height 100%
+                            width 0%
+
+                            .time-display
+                                font-family: 'Share Tech Mono' 
+                                text-align: center
+                                font-size 14px
+                                margin 0
+                                color white
+
+        
+
+
+ 
 
 
 .device-middle
     margin 1.5vh 0
     width 100%
-    height 100%
+    height 33%
     display flex
     flex-direction row
 
@@ -53,16 +194,42 @@
         width 100%   
 
 
+        .slider-pad
+            padding 1rem
+            width 100%
+            background: #b4b89f;
+            border: 0.25px solid #c7cbb0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-box-shadow: 5px 5px 20px rgba(0,0,0,0.1), -5px -5px 20px rgba(255,255,255,0.1);
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.1), -5px -5px 20px rgba(255,255,255,0.1);
+            border-radius: 5px;
+            #slider
+                // padding 0.5rem
+                .noUi-pips-vertical
+                    left 50%
+                    transform translate(-50%,0)
+                    cursor pointer
+                    background-color: #281C16
+                    cursor auto
+                .noUi-base
+                    transform translate(-50%,0)
+                    cursor auto
+                .noUi-handle
+                    // width 3rem   
+                .noUi-marker
+                    visibility: hidden   
+                    cursor auto
+                .noUi-value-sub
+                .noUi-value-large
+                    font-size: 12px
+                    font-family: 'Share Tech Mono' 
+                    text-transform: uppercase
+                    color #281C16
+                    cursor auto
+                .noUi-touch-area
+                    cursor pointer
 
-        #slider
-            .noUi-pips-vertical
-                left 50%
-                transform translate(-50%,0)
-                cursor pointer
-            .noUi-base
-                transform translate(-50%,0)
-            .noUi-touch-area
-                cursor pointer
 
         .panel
             height 100%
@@ -146,7 +313,15 @@
                 height 48%
                 width 100%
                 background-color: #B4B89F
-                padding 1rem
+                // padding 1rem
+
+                .svg-dial
+                    .dial-text-label
+                        text-transform: uppercase
+                        font-family: 'Share Tech Mono' 
+                        font-size 12px
+                        text-anchor: end
+                    // position: absolute
 
                 .dial-labels
                     transform rotate(-130deg) translate(-64px, -52px)                    
@@ -246,7 +421,7 @@
 .device-bottom
     // margin 2vh 0
     width 100%
-    height 100%
+    height 33%
     display flex
     flex-direction: column
 
